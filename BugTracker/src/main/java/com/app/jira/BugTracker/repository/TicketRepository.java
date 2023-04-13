@@ -12,7 +12,7 @@ import com.app.jira.BugTracker.entity.Ticket;
 @Repository
 public interface TicketRepository extends JpaRepository<Ticket, Integer>{
 
-	@Query("SELECT t FROM Ticket t  where t.id :=?1")
+	@Query("SELECT t FROM Ticket t  where t.id =?1")
 	List<Ticket> getAllTicketsPerApplication(Integer appId);
 	
 	@Query("SELECT t FROM Ticket t WHERE t.status=:status ")
