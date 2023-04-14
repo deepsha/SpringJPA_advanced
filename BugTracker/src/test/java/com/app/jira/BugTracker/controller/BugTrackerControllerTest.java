@@ -1,9 +1,10 @@
-package com.app.jira.BugTracker;
+package com.app.jira.BugTracker.controller;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Before;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
@@ -20,26 +21,16 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import com.app.jira.BugTracker.controller.BugTrackerController;
 import com.app.jira.BugTracker.service.ApplicationService;
-import com.app.jira.BugTracker.service.ReleaseService;
-import com.app.jira.BugTracker.service.TicketService;
-
-
+@SpringBootTest
 @RunWith(SpringRunner.class)
 @WebMvcTest(BugTrackerController.class)
-class BugTrackerApplicationTests {
+public class BugTrackerControllerTest {
 
-	
 	@Autowired
 	private MockMvc mockMvc;
 	@MockBean
 	private ApplicationService applicationService;
-	
-	@MockBean
-	private ReleaseService releaseService;
-	@MockBean
-	private TicketService ticketService;
 
 	@InjectMocks
 	private BugTrackerController bugTrackerController;
@@ -47,7 +38,7 @@ class BugTrackerApplicationTests {
 	@Before
 	public void setup()
 	{
-		MockitoAnnotations.initMocks(this);
+		MockitoAnnotations.initMocks(bugTrackerController);
 	}
 	@Test
 	public void testAddApplication() throws Exception{
@@ -55,7 +46,7 @@ class BugTrackerApplicationTests {
 
 		//Create a post request with an accept header for application\json
 		RequestBuilder requestBuilder = MockMvcRequestBuilders
-				.post("http://localhost:8081/tza/application")
+				.post("/tza/application/")
 				.accept(MediaType.APPLICATION_JSON).content(mockApplicationJson)
 				.contentType(MediaType.APPLICATION_JSON);
 
@@ -143,5 +134,4 @@ class BugTrackerApplicationTests {
 	        //Assert that the return status is 201 Created
 	        assertEquals(HttpStatus.CREATED.value(), response.getStatus());
 	    }
-	
 }

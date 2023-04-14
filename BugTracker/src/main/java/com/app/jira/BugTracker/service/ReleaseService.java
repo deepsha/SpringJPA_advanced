@@ -16,7 +16,7 @@ import jakarta.transaction.Transactional;
 
 @Service
 public class ReleaseService {
-	
+
 	private final ReleaseRepository releaseRepository;
 	private final ApplicationRepository applicationRepository;
 
@@ -28,22 +28,33 @@ public class ReleaseService {
 
 	public void addRelease(Release release) {
 		releaseRepository.save(release);
-		
+		if(release.getApplications()!=null && release.getApplications().size()>0)
+		{
+			for(Application app:release.getApplications()) {
+				applicationRepository.save(app);
+			}
+
+		}
+
 	}
 
 	public Release getReleaseById(Integer releaseId) {
 		return releaseRepository.findById(releaseId).get();
-		
+
 	}
-	@Transactional
+
 	public void addApptoRelease(Integer appId, Integer releaseId) {
 		Release release = getReleaseById(releaseId);
-        Application application = applicationRepository.findById(appId).get();        
-        List<Application> applicationList =new ArrayList<>();
-        applicationList.add(application);
-        release.setApplications(applicationList);
-        addRelease(release);
-		
+		Application application = applicationRepository.findById(appId).get();   
+		if(release.getId()==null && application.getId()==null)
+		{
+			List<Application> applicationList =new ArrayList<>();
+			applicationList.add(application);
+			release.setApplications(applicationList);
+			addRelease(release);
+		}
+
+
 	}
 
 

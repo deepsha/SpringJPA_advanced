@@ -1,0 +1,353 @@
+{
+	"info": {
+		"_postman_id": "4286ea55-de98-4f00-8892-8d9fa93b3674",
+		"name": "Bugtracker-JPA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8081/tza/application/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Trackzilla5\",\n\t\"description\" : \"new application2 used to track defects and enhancements.\",\n\t\"owner\": \"Sandra bullock\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/tza/application",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tza",
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/tza/application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Invoice Processing\",\n\t\"description\" : \"An application used to process invoices.\",\n\t\"owner\": \"Kesha Williams\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/tza/application",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tza",
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/tza/application/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/tza/application/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tza",
+						"application",
+						"2"
+					]
+				},
+				"description": "A specific application id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/tza/tickets/application/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/tza/tickets/application/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tza",
+						"tickets",
+						"application",
+						"1"
+					]
+				},
+				"description": "list all applications"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/tza/tickets/release/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/tza/tickets/release/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tza",
+						"tickets",
+						"release",
+						"2"
+					]
+				},
+				"description": "list all applications"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/tza//tickets/release/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/tza//tickets/release/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tza",
+						"",
+						"tickets",
+						"release",
+						"1"
+					]
+				},
+				"description": "list all applications"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/application/",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 2,\n\t\"name\": \"TrackzillaNewNew\",\n\t\"description\": \"The new shiiping description\",\n    \"owner\": \"Van huseun\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/tza/application/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tza",
+						"application",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/tza/application/2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/tza/application/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tza",
+						"application",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/release/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"releaseDate\": \"2025-02-14\",\n\t\"description\": \"new crocodile  project\",\n    \"releaseManager\": \"Peter\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/tza/release",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tza",
+						"release"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/release/ (with Apps)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"releaseDate\": \"2025-09-01\",\n\t\"description\": \"The description\",\n\t\"applications\": [{\"name\": \"New App1\", \"description\": \"App added with release\", \"owner\": \"Jane Doe\"},{\"name\": \"New App2\", \"description\": \"Another app added with release\", \"owner\": \"Jane Doe\"}]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/tza/release/1/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tza",
+						"release",
+						"1",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/ticket/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Dev work\",\n\t\"description\" : \"There are cases where we need to assign a ticket to more than one person.\",\n\t\"application\": {\"id\":\"1\"},\n\t\"release\": {\"id\":\"1\"},\n\t\"status\": \"Closed\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/tza/ticket",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tza",
+						"ticket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/release/1/1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/tza/release/1/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tza",
+						"release",
+						"1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/release/1/1 copy",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/tza/release/1/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tza",
+						"release",
+						"1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

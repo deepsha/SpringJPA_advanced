@@ -121,7 +121,7 @@ public class BugTrackerController {
 		return new ResponseEntity<Void>( HttpStatus.CREATED);
 	}
 
-	@PutMapping("/release/{appid}/{releaseid}")
+	@PostMapping("/release/{appid}/{releaseid}")
 	public ResponseEntity<Void> addApptoRelease(@PathVariable("appid") Integer appid, @PathVariable("releaseid") Integer releaseid) {
 		releaseService.addApptoRelease(appid, releaseid);
 		return new ResponseEntity<Void>(HttpStatus.OK);
