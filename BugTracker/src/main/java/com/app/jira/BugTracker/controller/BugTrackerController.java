@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -142,6 +143,12 @@ public class BugTrackerController {
 	public ResponseEntity<List<Ticket>> findTicketByStatus(@PathVariable("status") String ticketStatus) {
 		List<Ticket> list = ticketService.findTicketByStatus(ticketStatus);
 		return new ResponseEntity<List<Ticket>>(list, HttpStatus.OK);
+	}
+	
+	@PatchMapping("/tickets/{id}")
+	public ResponseEntity<Ticket> patchTicketByStatus(@PathVariable("id") Integer id,@RequestParam("ticketStatus") String ticketStatus) {
+		Ticket ticket=ticketService.patchTicketByStatus(id,ticketStatus);
+		return new ResponseEntity<Ticket>(ticket, HttpStatus.OK);
 	}
 
 }
