@@ -1,6 +1,8 @@
 package com.app.jira.BugTracker.service;
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import com.app.jira.BugTracker.entity.Ticket;
 
@@ -20,6 +22,9 @@ public class TicketService {
 
 	public List<Ticket> getAllTickets() {
 		return ticketRepository.findAll();
+	}
+	public Page<Ticket> getAllTicketsPaging(int page,int size) {
+		return ticketRepository.findAll(PageRequest.of(page,size));
 	}
 
 	public Ticket getTicketById(int ticketId) {

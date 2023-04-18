@@ -55,7 +55,7 @@ class BugTrackerApplicationTests {
 
 		//Create a post request with an accept header for application\json
 		RequestBuilder requestBuilder = MockMvcRequestBuilders
-				.post("http://localhost:8081/tza/application")
+				.post("/tza/application")
 				.accept(MediaType.APPLICATION_JSON).content(mockApplicationJson)
 				.contentType(MediaType.APPLICATION_JSON);
 

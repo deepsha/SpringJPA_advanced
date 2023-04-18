@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.jira.BugTracker.entity.Application;
@@ -85,9 +86,11 @@ public class BugTrackerController {
 
 	}
 
-	@GetMapping("/tickets")
-	public ResponseEntity<List<Ticket>> getAllTickets() {
-		List<Ticket> list = ticketService.getAllTickets();
+	
+
+	@GetMapping("/tickets/all")
+	public ResponseEntity<List<Ticket>> getAllTicketsPaging(@RequestParam("page") int page,@RequestParam("size") int size) {
+		List<Ticket> list = ticketService.getAllTicketsPaging( page,size).getContent();
 		return new ResponseEntity<List<Ticket>>(list, HttpStatus.OK);
 	}
 

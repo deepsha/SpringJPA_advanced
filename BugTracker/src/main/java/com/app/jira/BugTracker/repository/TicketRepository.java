@@ -17,5 +17,7 @@ public interface TicketRepository extends JpaRepository<Ticket, Integer>{
 	
 	@Query("SELECT t FROM Ticket t WHERE t.status=:status ")
 	List<Ticket> findTicketByStatus(@Param("status") String status);
+	
+	
 
 }
